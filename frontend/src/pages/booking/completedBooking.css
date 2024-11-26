@@ -1,0 +1,179 @@
+
+
+/* Container หลัก */
+.completed-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #eae4ff;
+  padding: 20px 0;
+}
+
+/* Header Section */
+.completed-container .completed-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.completed-container .location-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d6d0ff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.completed-container .start-point, .end-point {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  background-color: #f0f0f0;
+  padding: 10px 15px;
+  border-radius: 5px;
+}
+
+
+
+.completed-container .content-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.completed-container .content-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 200px; /* เพิ่มระยะห่างระหว่างองค์ประกอบ */
+  margin-top: 70px;
+  
+}
+
+.completed-container p {
+  font-size: 1.2rem; /* ขนาดตัวอักษร */
+  line-height: 1.6; /* ความสูงของบรรทัด */
+  color: #333; /* สีของตัวอักษร */
+  margin: 10px 0; /* ระยะห่างบน-ล่าง */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+
+
+.completed-container .content-select {
+  width: 30%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f9f5ff;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.completed-container .price-input {
+  width: 30%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f9f5ff;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Footer Section */
+.completed-container .completed-footer {
+  margin-top: 20px;
+}
+
+.completed-container .complete-button {
+  background-color: #7d69e1;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.completed-container .complete-button:hover {
+  background-color: #5f49c8;
+  transform: scale(1.05);
+}
+
+
+.completed-container .content-column {
+  display: flex;
+  flex-direction: column; /* จัดให้อยู่ในแนวตั้ง */
+  align-items: flex-start; /* จัดข้อความและ select ให้อยู่ซ้าย */
+  width: 45%; /* กำหนดความกว้างของแต่ละคอลัมน์ */
+}
+
+.completed-container .content-label {
+  font-size: 1.2rem; /* ขนาดตัวอักษร */
+  font-weight: bold; /* ตัวอักษรหนา */
+  color: #ffffff; /* สีตัวอักษร */
+  background-color: #6a5acd; /* สีพื้นหลัง */
+  padding: 10px 0; /* เพิ่มพื้นที่ด้านบนและล่าง */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  border-radius: 5px; /* มุมมน */
+  width: 100%; /* ขยายให้ครอบคลุมเต็มคอลัมน์ */
+  display: block; /* ให้ label ทำงานเหมือน block-level element */
+}
+
+
+.completed-container .content-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem; /* ขนาดตัวอักษรใน select */
+  background-color: #f7f4fc; /* สีพื้นหลัง */
+}
+
+/* กรอบคลุมทั้งหมด */
+.content-row-wrapper {
+  background-color: #dcd0ff; /* สีพื้นหลังของกรอบ */
+  border-radius: 10px; /* ขอบมน */
+  padding: 15px; /* ระยะห่างภายใน */
+  margin: 150px 0; /* เพิ่มระยะห่างด้านบนและล่าง */
+  width: 120%; /* ความกว้างของกรอบ */
+  max-width: 1200px; /* กำหนดความกว้างสูงสุด */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  transform: translateX(-10%); /* ขยับกรอบไปทางซ้าย 10% */
+}
+
+
+
+/* ส่วนหัวข้อ */
+.content-row-header {
+  display: flex; /* ใช้ Flexbox จัดให้อยู่ในแถวเดียวกัน */
+  justify-content: space-between; /* กระจายระยะห่างเท่า ๆ กัน */
+  align-items: center; /* จัดให้อยู่กึ่งกลางในแนวตั้ง */
+}
+
+.header-item {
+  flex: 1; /* แบ่งพื้นที่ให้เท่ากัน */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  font-size: 1.2rem; /* ขนาดตัวอักษร */
+  font-weight: bold; /* ตัวอักษรหนา */
+  color: #333; /* สีตัวอักษร */
+  padding: 10px; /* ระยะห่างภายใน */
+}
+
+.content-item {
+  margin-top: -10px; /* ลดระยะห่างด้านบน */
+  padding: 5px 0; /* เพิ่ม Padding ด้านในให้เหมาะสม */
+  display: flex; /* เพื่อจัดเรียงในแนวนอนหากมีเนื้อหาภายใน */
+  justify-content: center; /* จัดให้อยู่ตรงกลางในแนวนอน */
+  align-items: center; /* จัดให้อยู่ตรงกลางในแนวตั้ง */
+}

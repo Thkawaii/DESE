@@ -1,0 +1,196 @@
+@import "leaflet/dist/leaflet.css";
+
+.pickup-booking-container {
+  width: 100%;
+  max-width: 100vw;
+  background-color: #f3e5f5;
+  border-radius: 20px; /* ขอบมน */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; 
+  height: 100%; 
+
+}
+
+.pickup-booking-container .map-container {
+  
+  border: 3px solid #7e57c2;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 90%;
+  max-width: 100%;
+  height: calc(100vh - 300px); /* ปรับขนาดสำหรับเดสก์ท็อป */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin-left: 70px; /* ดันไปทางขวามือ */
+  
+}
+
+.pickup-booking-container .map-container .leaflet-container {
+  height: 100%;
+  width: 100%;
+  
+}
+
+.pickup-booking-container .pickup-booking-container h2 {
+  color: #6a1b9a;
+  margin-bottom: 15px;
+  font-size: 1.8rem; /* ขนาดหัวข้อใหญ่ขึ้น */
+  font-weight: bold;
+}
+
+.pickup-booking-container .form-group {
+  margin-bottom: 20px; /* เพิ่มระยะห่าง */
+  text-align: center;
+  position: relative; /* สำหรับไอคอนค้นหา */
+}
+
+.pickup-booking-container .input-container {
+  position: relative;
+  width: 80%; /* ความกว้างของกล่องข้อความ */
+  margin-left: 110px;
+}
+
+.pickup-booking-container .search-icon {
+  position: absolute;
+  margin-top: 45px;
+  left: 15px;
+  transform: translateY(-50%);
+  font-size: 1.5rem; /* ขนาดไอคอนใหญ่ขึ้น */
+  color: #6a1b9a;
+}
+
+.pickup-booking-container .input-container input {
+  width: 100%;
+  padding: 15px 15px 15px 50px; /* เพิ่ม Padding ด้านซ้ายสำหรับไอคอน */
+  font-size: 1rem;
+  border: 1px solid #d1c4e9;
+  border-radius: 40px; /* ขอบมนมากขึ้น */
+  outline: none;
+  background-color: #f9f1fc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 20px;
+}
+
+.pickup-booking-container .input-container input:focus {
+  border-color: #6a1b9a;
+  box-shadow: 0 0 15px rgba(106, 27, 154, 0.3); /* เพิ่มเงาเมื่อโฟกัส */
+}
+
+.pickup-booking-container .booking-button {
+  width: 90%; /* ลดขนาดความกว้างเล็กน้อย */
+  padding: 12px;
+  font-size: 1.2rem; /* ขนาดข้อความใหญ่ขึ้น */
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #8e24aa;
+  border: none;
+  border-radius: 30px; /* เพิ่มความมน */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pickup-booking-container .booking-button:hover {
+  background-color: #6a1b9a;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* เพิ่มเงาเมื่อ Hover */
+}
+
+.pickup-booking-container .location-list {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e3dced;
+  border-radius: 20px;
+  width: 80%; /* ความกว้างของกล่อง (ปรับตามต้องการ) */
+  max-width: 600px; /* ความกว้างสูงสุด */
+  height: auto; /* ให้ความสูงปรับตามเนื้อหา */
+  max-height: 300px; /* จำกัดความสูงสูงสุด */
+  overflow-y: auto; /* เพิ่ม Scroll หากเนื้อหาเกินขนาด */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+  margin-left: auto; /* จัดให้อยู่ตรงกลาง */
+  margin-right: auto; /* จัดให้อยู่ตรงกลาง */
+  
+}
+
+.pickup-booking-container .location-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 1rem;
+  color: #4a148c;
+}
+
+.pickup-booking-container .location-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.pickup-booking-container .additional-services {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.pickup-booking-container .additional-services h3 {
+  color: #4a148c;
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.pickup-booking-container .service-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #6a1b9a;
+  border: none;
+  border-radius: 30px; /* ขอบมน */
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pickup-booking-container .service-button:hover {
+  background-color: #4a148c;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pickup-booking-container .service-icon {
+  margin-right: 10px;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+    .pickup-booking-container .map-container {
+    height: calc(100vh - 250px);
+  }
+
+  .pickup-booking-container .booking-button {
+    width: 100%;
+  }
+
+  .pickup-booking-container .service-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.pickup-booking-container .advancebookingcontainer {
+  margin-top: 20px;
+  text-align: center; /* จัดกลาง */
+}
+
+.pickup-booking-container .advance-booking-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #8e24aa;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pickup-booking-container .advance-booking-button:hover {
+  background-color: #6a1b9a;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+}

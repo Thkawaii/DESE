@@ -1,0 +1,73 @@
+/* General Footer Styles */
+.foot {
+    background-color: #eae6f8; /* สีม่วงอ่อน */
+    color: #4a4a4a; /* สีเทาเข้มสำหรับข้อความ */
+    padding: 20px 10px; /* เพิ่ม padding เพื่อขยับจากด้านขวา */
+    width: calc(100% - 20px); /* ลดความกว้างเพื่อเพิ่มพื้นที่ด้านขวา */
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-right: 10px; /* เพิ่มระยะจากด้านขวา */
+    box-sizing: border-box; /* รวม padding ในขนาดของกล่อง */
+  }
+  
+  
+  
+  .foot .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  .foot .col {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .foot h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #6c63ff; /* สีม่วงเข้ม */
+  }
+  
+  .foot p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  .foot ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .foot ul li {
+    margin-bottom: 10px;
+  }
+  
+  .foot ul li a {
+    text-decoration: none;
+    color: #6c63ff; /* สีม่วงเข้ม */
+    transition: color 0.3s ease;
+  }
+  
+  .foot ul li a:hover {
+    color: #4a4a4a; /* สีเทาเข้ม */
+  }
+  
+  .foot .social-icons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .foot .social-icons a {
+    color: #6c63ff; /* สีม่วงเข้ม */
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .foot .social-icons a:hover {
+    color: #4a4a4a; /* สีเทาเข้ม */
+  }
+  

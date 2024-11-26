@@ -1,0 +1,157 @@
+/* Container หลัก */
+.pickup-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #f9f9fc; /* เพิ่มพื้นหลังสีอ่อน */
+  }
+  
+  /* Header Section */
+  .pickup-container .pickup-header {
+    position: relative;
+    width: 100%;
+    height: 50%; /* สูงครึ่งหนึ่งของหน้าจอ */
+    overflow: hidden;
+  }
+  
+  .pickup-container .header-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-bottom: 5px solid #dcd7f7; /* เพิ่มเส้นแบ่งด้านล่าง */
+  }
+  
+  .pickup-container .search-bar {
+    position: absolute;
+    top: 80%; /* เลื่อนลงมา */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px; /* ขอบมน */
+    padding: 10px 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10; /* เพื่อให้แสดงอยู่ด้านหน้า */
+    transition: top 0.3s ease; /* เพิ่ม Transition เพื่อความนุ่มนวล */
+  }
+  
+  .pickup-container .search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 10px;
+    background-color: #f3f4f8;
+    border-radius: 10px; /* ขอบมนเล็กน้อย */
+    transition: background-color 0.3s ease;
+  }
+  
+  .pickup-container .search-input:focus {
+    background-color: #ffffff; /* เปลี่ยนสีพื้นหลังเมื่อโฟกัส */
+    box-shadow: 0px 0px 5px rgba(108, 99, 255, 0.3); /* เพิ่มเงา */
+  }
+  
+  .pickup-container .search-button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .pickup-container .search-button:hover {
+    background-color: #574de0;
+    transform: scale(1.05); /* เพิ่มเอฟเฟกต์ขยาย */
+  }
+  
+  /* Destination Section */
+  .pickup-container .destination-section {
+    width: 100%;
+    padding: 20px;
+    background-color: #dcd7f7;
+    text-align: center;
+  }
+  
+  .pickup-container .destination-item {
+    background-color: #b3b8f5;
+    color: white;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 18px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .pickup-container .destination-item:hover {
+    background-color: #9c9fdd; /* สีพื้นหลังเมื่อ Hover */
+    transform: scale(1.02); /* ขยายเล็กน้อย */
+  }
+  
+  .pickup-container .destination-item i {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  
+  /* Service Section */
+  .pickup-container .service-section {
+    width: 100%;
+    padding: 20px;
+    background-color: #f4eefe;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .pickup-container .service-button {
+    background-color: #9e91f8;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .pickup-container .service-button:hover {
+    background-color: #7c71d6;
+    transform: translateY(-2px); /* ยกปุ่มขึ้น */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* เพิ่มเงา */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .pickup-container .search-bar {
+      top: 30%; /* เลื่อนลงสำหรับหน้าจอเล็ก */
+      padding: 8px 15px;
+      width: 90%; /* ลดความกว้าง */
+    }
+  
+    .pickup-container .destination-item {
+      font-size: 16px;
+      padding: 12px;
+    }
+  
+    .pickup-container .service-button {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+  }
+  

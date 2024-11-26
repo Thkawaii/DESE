@@ -1,0 +1,104 @@
+/* ทำให้แชทเต็มหน้าจอ */
+.chat-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background-color: #eae8f3;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* ส่วนหัวของแชท */
+  .chat-header {
+    background-color: #9278d3;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+    height: 70px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chat-header img {
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+  }
+  
+  .chat-header .chat-name {
+    font-weight: bold;
+  }
+  
+  /* พื้นที่สำหรับข้อความ */
+  .messages-container {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f8f9fc;
+  }
+  
+  /* กล่องข้อความ */
+  .message-bubble {
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 70%;
+    word-wrap: break-word;
+    display: inline-block;
+    font-size: 1rem;
+  }
+  
+  /* ข้อความผู้ใช้ */
+  .message-bubble.user {
+    background-color: #9e91d3;
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+  }
+  
+  /* ข้อความจากอีกฝ่าย */
+  .message-bubble.other {
+    background-color: #d3c9f0;
+    color: black;
+    align-self: flex-start;
+    text-align: left;
+  }
+  
+  /* ส่วนป้อนข้อความ */
+  .chat-container .input-container {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f7f7f7;
+    box-shadow: 0px -2px 5px rgba(112, 109, 109, 0.1);
+  }
+  
+  .chat-container .input-container input {
+    flex: 1;
+    padding: 10px 15px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-right: 10px;
+    background-color: #5d5c5f; /*สีส่งข้อความ*/
+  }
+  
+  .chat-container .input-container button {
+    background-color: #9278d3;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  

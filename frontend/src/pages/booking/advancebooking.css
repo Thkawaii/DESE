@@ -1,0 +1,77 @@
+/* AdvanceBooking.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Arial", sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  .advancebooking-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .advancebooking-container h2 {
+    color: #6c63ff;
+    margin-bottom: 20px;
+  }
+  
+  .advancebooking-container .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  .advancebooking-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .advancebooking-container input,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .advancebooking-container input:focus,
+  select:focus {
+    border-color: #6c63ff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+  }
+  
+  .advancebooking-container button.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6c63ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .advancebooking-container button.submit-button:hover {
+    background-color: #574bcb;
+  }
+  
+  .advancebooking-container .confirmation-message {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .advancebooking-container .confirmation-message p {
+    font-size: 16px;
+    color: #333;
+  }
+  
