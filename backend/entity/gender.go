@@ -1,7 +1,12 @@
 package entity
 
+import (
+	
+	"gorm.io/gorm"
+)
+
 type Gender struct {
-    GenderID   int         `gorm:"primaryKey" json:"gender_id"`
+    gorm.Model  
     GenderName string      `json:"gender_name"`
     Passengers []Passenger `gorm:"foreignKey:GenderID" json:"passengers"` // ความสัมพันธ์ hasMany
 	

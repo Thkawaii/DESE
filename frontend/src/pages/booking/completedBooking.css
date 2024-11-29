@@ -1,5 +1,3 @@
-
-
 /* Container หลัก */
 .completed-container {
   display: flex;
@@ -9,7 +7,7 @@
   width: 100%;
   min-height: 100vh;
   background-color: #eae4ff;
-  padding: 20px 0;
+  padding: 20px;
 }
 
 /* Header Section */
@@ -19,6 +17,7 @@
   margin-bottom: 20px;
 }
 
+/* กล่องแสดงข้อมูลสถานที่ */
 .completed-container .location-box {
   display: flex;
   justify-content: space-between;
@@ -30,7 +29,8 @@
   max-width: 600px;
 }
 
-.completed-container .start-point, .end-point {
+.completed-container .start-point,
+.completed-container .end-point {
   font-size: 1rem;
   font-weight: bold;
   color: #333;
@@ -39,53 +39,50 @@
   border-radius: 5px;
 }
 
-
-
-.completed-container .content-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-  font-weight: bold;
-  color: #ffffff;
+/* ปรับปรุงส่วนแสดงแผนที่ */
+.map-container {
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  border-radius: 10px;
+  margin: 20px 0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  z-index: 1; /* ให้แน่ใจว่าแผนที่อยู่ด้านบนสุด */
 }
 
+.map-container .leaflet-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* Content Section */
 .completed-container .content-row {
   display: flex;
   justify-content: space-between;
-  gap: 200px; /* เพิ่มระยะห่างระหว่างองค์ประกอบ */
-  margin-top: 70px;
-  
+  gap: 50px;
+  margin-top: 20px;
 }
 
 .completed-container p {
-  font-size: 1.2rem; /* ขนาดตัวอักษร */
-  line-height: 1.6; /* ความสูงของบรรทัด */
-  color: #333; /* สีของตัวอักษร */
-  margin: 10px 0; /* ระยะห่างบน-ล่าง */
-  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
-}
-
-
-
-.completed-container .content-select {
-  width: 30%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #f9f5ff;
-  text-align: center;
-  font-size: 1rem;
-}
-
-.completed-container .price-input {
-  width: 30%;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #f9f5ff;
-  text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.6;
   color: #333;
+  margin: 10px 0;
+  text-align: center;
+}
+
+/* เลือกประเภทรถและจำนวนคน */
+.completed-container .content-select {
+  width: 80%;
+  max-width: 300px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f5ff;
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
 
 /* Footer Section */
@@ -110,70 +107,52 @@
   transform: scale(1.05);
 }
 
-
-.completed-container .content-column {
-  display: flex;
-  flex-direction: column; /* จัดให้อยู่ในแนวตั้ง */
-  align-items: flex-start; /* จัดข้อความและ select ให้อยู่ซ้าย */
-  width: 45%; /* กำหนดความกว้างของแต่ละคอลัมน์ */
-}
-
-.completed-container .content-label {
-  font-size: 1.2rem; /* ขนาดตัวอักษร */
-  font-weight: bold; /* ตัวอักษรหนา */
-  color: #ffffff; /* สีตัวอักษร */
-  background-color: #6a5acd; /* สีพื้นหลัง */
-  padding: 10px 0; /* เพิ่มพื้นที่ด้านบนและล่าง */
-  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
-  border-radius: 5px; /* มุมมน */
-  width: 100%; /* ขยายให้ครอบคลุมเต็มคอลัมน์ */
-  display: block; /* ให้ label ทำงานเหมือน block-level element */
-}
-
-
-.completed-container .content-select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 1rem; /* ขนาดตัวอักษรใน select */
-  background-color: #f7f4fc; /* สีพื้นหลัง */
-}
-
-/* กรอบคลุมทั้งหมด */
+/* กรอบคลุมข้อมูล */
 .content-row-wrapper {
-  background-color: #dcd0ff; /* สีพื้นหลังของกรอบ */
-  border-radius: 10px; /* ขอบมน */
-  padding: 15px; /* ระยะห่างภายใน */
-  margin: 150px 0; /* เพิ่มระยะห่างด้านบนและล่าง */
-  width: 120%; /* ความกว้างของกรอบ */
-  max-width: 1200px; /* กำหนดความกว้างสูงสุด */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
-  transform: translateX(-10%); /* ขยับกรอบไปทางซ้าย 10% */
+  background-color: #dcd0ff;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 20px 0;
+  width: 100%;
+  max-width: 1200px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-
 
 /* ส่วนหัวข้อ */
 .content-row-header {
-  display: flex; /* ใช้ Flexbox จัดให้อยู่ในแถวเดียวกัน */
-  justify-content: space-between; /* กระจายระยะห่างเท่า ๆ กัน */
-  align-items: center; /* จัดให้อยู่กึ่งกลางในแนวตั้ง */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header-item {
-  flex: 1; /* แบ่งพื้นที่ให้เท่ากัน */
-  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
-  font-size: 1.2rem; /* ขนาดตัวอักษร */
-  font-weight: bold; /* ตัวอักษรหนา */
-  color: #333; /* สีตัวอักษร */
-  padding: 10px; /* ระยะห่างภายใน */
+  flex: 1;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  padding: 10px;
 }
 
 .content-item {
-  margin-top: -10px; /* ลดระยะห่างด้านบน */
-  padding: 5px 0; /* เพิ่ม Padding ด้านในให้เหมาะสม */
-  display: flex; /* เพื่อจัดเรียงในแนวนอนหากมีเนื้อหาภายใน */
-  justify-content: center; /* จัดให้อยู่ตรงกลางในแนวนอน */
-  align-items: center; /* จัดให้อยู่ตรงกลางในแนวตั้ง */
+  margin-top: -10px;
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* สำหรับอุปกรณ์ขนาดเล็ก */
+@media screen and (max-width: 768px) {
+  .map-container {
+    height: 300px;
+  }
+
+  .completed-container {
+    padding: 10px;
+  }
+
+  .completed-footer {
+    margin-top: 15px;
+  }
 }

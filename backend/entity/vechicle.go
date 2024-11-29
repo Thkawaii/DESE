@@ -4,7 +4,7 @@ import "gorm.io/gorm"
 
 type Vehicle struct {
 	gorm.Model   
-    VehicleID     int       `gorm:"primaryKey" json:"vehicle_id"`
+    
     LicensePlate  string    `json:"license_plate"`
     VehicleModel  string    `json:"model"`
     Capacity      int       `json:"capacity"`

@@ -8,7 +8,7 @@ import (
 
 type Driver struct {
 	gorm.Model
-	DriverID         int       `gorm:"primaryKey" json:"driver_id"`
+	
 	Name             string    `json:"name"`
 	DriverLicenseNum string    `json:"driver_license_number"`
 	PhoneNumber      string    `json:"phone_number"`
@@ -34,7 +34,7 @@ type Driver struct {
 	Messages         []Message `gorm:"foreignKey:DriverID" json:"messages"` 
 
 	RoleID   uint   `gorm:"not null"`
-    Role     Role   `gorm:"foreignKey:RoleID"`
+    Role     Roles  `gorm:"foreignKey:RoleID"`
 }
 
 

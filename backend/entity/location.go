@@ -8,10 +8,11 @@ type Location struct {
     Latitude   float64 `json:"latitude"`
     Longitude  float64 `json:"longitude"`
     Address    string  `json:"address"`
+	Province	string
+	Place	string
     Timestamp  string  `json:"timestamp"`
 
     Drivers    []Driver `gorm:"foreignKey:LocationID" json:"drivers"` // ความสัมพันธ์ hasMany
 
 	
 }
-

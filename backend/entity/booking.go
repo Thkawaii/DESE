@@ -3,8 +3,9 @@ package entity
 import "gorm.io/gorm"
 
 type Booking struct {
-	gorm.Model   
-    BookingID      int      `gorm:"primaryKey" json:"booking_id"`
+	gorm.Model 
+    Beginning   string  `json:"beginning"`
+    Terminus string  `json:"terminus"`
     StartTime      string   `json:"start_time"`
     EndTime        string   `json:"end_time"`
     Distance       float64  `json:"distance"`

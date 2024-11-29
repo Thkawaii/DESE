@@ -1,9 +1,10 @@
 package entity
 
 import "gorm.io/gorm"
+
 type Passenger struct {
 	gorm.Model  
-    PassengerID int       `gorm:"primaryKey" json:"passenger_id"`
+    
     UserName   string       `json:"user_name"`
     FirstName   string    `json:"first_name"`
     LastName   string    `json:"last_name"`
@@ -19,5 +20,5 @@ type Passenger struct {
 	Messages       []Message `gorm:"foreignKey:PassengerID" json:"messages"` // ความสัมพันธ์ hasMany
 
     RoleID   uint   `gorm:"not null"`
-    Role     Role   `gorm:"foreignKey:RoleID"`
+    Role     Roles   `gorm:"foreignKey:RoleID"`
 }
