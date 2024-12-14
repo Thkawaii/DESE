@@ -137,7 +137,7 @@ const handleDestinationSubmit = async () => {
 
   return (
     <div style={{ position: 'relative' }}>
-      <LoadScript googleMapsApiKey="AIzaSyBCporibkdPqd7yC4nJEWMZI2toIlY23jM" libraries={['places']}>
+      <LoadScript googleMapsApiKey="api_map" libraries={['places']}>
         <GoogleMap
           mapContainerStyle={containerStyle}
           center={location}
