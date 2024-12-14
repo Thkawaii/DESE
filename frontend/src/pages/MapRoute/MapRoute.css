@@ -1,0 +1,159 @@
+ .MapRoute{
+    background-color: #D9D7EF; /* สีพื้นหลัง */
+    width: auto;
+    height: 130vh;
+    
+    
+ }
+ 
+ .distance {
+    background-color: #bdb3f5; /* สีพื้นหลัง */
+    border: 2px solid #8367c7; /* ขอบกล่อง */
+    padding: 10px 20px; /* การเว้นระยะภายในกล่อง */
+    border-radius: 8px; /* มุมโค้งมน */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เงาของกล่อง */
+    max-width: 300px; /* ความกว้างสูงสุดของกล่อง */
+    text-align: center; /* จัดข้อความให้อยู่กลาง */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    
+  }
+  
+ .distance h3 {
+    color:  #D9D7EF; /* สีของข้อความ */
+    font-size: 18px; /* ขนาดตัวอักษร */
+    font-weight: 600; /* หนักตัวอักษร */
+    margin: 0; /* เอาระยะห่างในตัวอักษรออก */
+  }
+
+
+
+  .vehicle-selector {
+    font-family: Arial, sans-serif;
+    height: 120vh;
+   
+  }
+  
+  .vehicle-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  
+  .vehicle-item {
+    background-color: #8792E7; /* สีพื้นหลังอ่อน ๆ */
+    padding: 20px; /* เพิ่ม padding เพื่อให้ขยายใหญ่ขึ้น */
+    
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* เพิ่มการเปลี่ยนแปลงขนาดในระหว่าง hover */
+    font-size: 18px; /* เพิ่มขนาดตัวอักษร */
+    width: 100%; /* ขยายความกว้างให้เต็มที่ */
+    display: flex; /* ใช้ flexbox เพื่อให้ข้อมูลอยู่ในบรรทัดเดียว */
+    align-items: center; /* จัดให้อยู่กลางในแนวดิ่ง */
+    gap: 20px; /* ระยะห่างระหว่างไอคอนและข้อมูล */
+  }
+  
+  /*.vehicle-item:hover {
+    background-color: #6f67cb; /* เปลี่ยนสีเมื่อ hover */
+  
+  
+  
+  button {
+    background-color:  #D9D7EF; /* ปุ่มสีม่วง */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px; /* ระยะห่างระหว่างปุ่มและข้อมูล */
+  }
+  
+  button:hover {
+    background-color:  #a7a1ef; /* เปลี่ยนสีเมื่อ hover */
+  }
+  
+  .selected-vehicle {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #92669c; /* สีพื้นหลังอ่อน */
+    border-radius: 8px;
+    border: 2px solid  #4a40b7; /* ขอบสีม่วงเข้ม */
+    font-size: 16px; /* ขนาดฟอนต์ที่เหมาะสม */
+  }
+  
+  .selected-vehicle h3 {
+    margin: 0;
+    color:  #D9D7EF; /* สีของข้อความ */
+  }
+  
+  .selected-vehicle p {
+    margin: 5px 0;
+    color:  #D9D7EF; /* สีข้อความของรายละเอียด */
+  }
+  
+  .vehicle-info {
+    display: flex; /* ใช้ flexbox เพื่อให้ข้อมูลอยู่ในบรรทัดเดียว */
+    align-items: center; /* จัดให้อยู่กลางในแนวดิ่ง */
+    gap: 20px; /* ระยะห่างระหว่างแต่ละข้อมูล */
+    flex-wrap: wrap; /* ช่วยจัดการกรณีที่หน้าจอเล็กลง */
+  }
+  
+  .vehicle-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color:  #D9D7EF; /* สีของชื่อรถ */
+  }
+  
+  .vehicle-info p {
+    margin: 0;
+    color:  #D9D7EF; /* สีข้อความของรายละเอียด */
+    font-size: 16px;
+  }
+  
+  .vehicle-icon {
+    font-size: 30px; /* ขนาดของไอคอน */
+    color:  #D9D7EF; /* สีของไอคอน */
+    margin-right: 15px;
+  }
+  .booking-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+   
+  }
+  
+  .booking-button {
+    background-color: #7F6ACB;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  
+  .vehicle-item.even {
+    background-color: #b7b2f2; /* สีอ่อน */
+  }
+  
+  .vehicle-item.odd {
+    background-color: #746eb8; /* สีเขียวอ่อน */
+  }
+  
+  .vehicle-item.selected {
+    border-color: #744caf; /* ขอบสีเขียว */
+    background-color: #6a59ea; /* พื้นหลังสีเขียวอ่อน */
+    
+  }
+  
+  .vehicle-item {
+    border-radius: 8px; /* ขอบโค้งเล็กน้อย */
+    cursor: pointer;
+    border: 3px solid transparent; /* ขอบเริ่มต้นไม่มีสี */
+    transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  }
+  

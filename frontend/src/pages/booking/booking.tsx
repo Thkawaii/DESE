@@ -155,7 +155,7 @@ const Booking: React.FC = () => {
         </div>
       </div>
 
-      <div className="advancebookingcontainer" onClick={() => navigate('/destination')}>
+      <div className="advancebookingcontainer" onClick={() => navigate('/map')}>
         <div className="advance-booking-button">
           จองล่วงหน้า
         </div>

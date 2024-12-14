@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar: React.FC = () => {
@@ -13,22 +14,25 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="logo">cabana</div>
       <ul className="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#rides">Rides</a></li>
-        <li><a href="#promotion">Promotion</a></li>
+        <li>
+          <Link to="/DriverChat">Home</Link>
+        </li>
+        <li>
+          <Link to="/RideHistory">Rides</Link>
+        </li>
+        <li>
+          <Link to="/Promotion">Promotion</Link>
+        </li>
         <li className="notification">
-          <div className="icon-wrapper">
-            <i
-              className="fi fi-rs-bell"
-              onClick={handleNotificationClick}
-            ></i>
+          <div className="icon-wrapper" onClick={handleNotificationClick}>
+            <i className="fi fi-rs-bell"></i>
             {notifications > 0 && (
               <span className="badge">{notifications}</span>
             )}
           </div>
         </li>
         <li>
-          <img src="user-profile.png" alt="Profile" className="profile-icon" />
+            <img src="user-profile.png" alt="Profile" className="profile-icon" />
         </li>
       </ul>
     </nav>

@@ -1,0 +1,65 @@
+/* RideHistory.css */
+.ride-history {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #4A148C; /* สีม่วงธีมหลัก */
+  }
+  
+  .ride-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .ride-table th,
+  .ride-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .ride-table th {
+    background-color: #4A148C;
+    color: white;
+  }
+  
+  .ride-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .ride-table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .status.Pending {
+    background-color: #FF9800; /* สีส้มสำหรับสถานะ Pending */
+  }
+  
+  .status.Completed {
+    background-color: #4CAF50; /* สีเขียวสำหรับสถานะ Completed */
+  }
+  
+  .status.Cancelled {
+    background-color: #F44336; /* สีแดงสำหรับสถานะ Cancelled */
+  }
+  
+  .footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #757575;
+  }
+  

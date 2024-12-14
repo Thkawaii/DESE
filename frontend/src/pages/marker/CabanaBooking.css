@@ -1,0 +1,104 @@
+/* เตรียมหน้าจอหลัก */
+/*body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #e9e8fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .booking-container {
+    width: 90%;
+    max-width: 700px;
+    background-color: #f3efff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }*/
+  
+  /* ส่วนแสดงจุดเริ่มต้นและปลายทาง */
+  /*.locations {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .location {
+    flex: 1;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #5d47a3;
+    background-color: #dcd5fa;
+    padding: 15px;
+    margin: 0 5px;
+    border-radius: 10px;
+  }
+  
+  /* ส่วนรายการยานพาหนะ */
+  /*.vehicles {
+    margin-bottom: 20px;
+  }
+  
+  .vehicle-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 0px;
+    background-color: #e1dafa;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .vehicle-item.selected {
+    background-color: #bdb3f5;
+    border: 2px solid #8367c7;
+  }
+  
+  .vehicle-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .vehicle-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .capacity {
+    margin-left: 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #8367c7;
+  }
+  
+  .vehicle-price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #3d348b;
+  }
+  
+  /* ปุ่มจอง */
+  /*.booking-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: #8367c7;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .booking-button:hover {
+    background-color: #5d47a3;
+  }
+  

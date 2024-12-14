@@ -1,0 +1,57 @@
+.coupon-card {
+    background-color: rgba(255, 255, 255, 0.6); /* ใช้สี #C9BFE9 พร้อมความโปร่งใส */
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    height: 100%;
+    transition: transform 0.3s, opacity 0.3s;
+    flex-direction: column;
+  }
+  
+  .coupon-image {
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border-radius: 8px;
+  }
+  
+  .coupon-details {
+    flex: 1;
+    padding-left: 15px;
+    text-align: center;
+  }
+  
+  /*ปุ่มมมมมมมมมมมมมมมมมมมมมมมมมมฝ*/
+  /* เพิ่มสไตล์สำหรับปุ่ม Carousel */
+  .ant-carousel .slick-prev, .ant-carousel .slick-next {
+    background-color: #9333EA; /* สีของปุ่ม */
+    border-radius: 50%; /* ให้ปุ่มเป็นรูปวงกลม */
+    color: white; /* สีของลูกศร */
+    width: 50px; /* ขนาดปุ่มที่ใหญ่ขึ้น */
+    height: 50px; /* ขนาดปุ่มที่ใหญ่ขึ้น */
+    line-height: 50px; /* ให้ลูกศรอยู่กลางปุ่ม */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* เงาของปุ่ม */
+    font-size: 18px; /* ขนาดของลูกศร */
+  }
+  
+  /* เปลี่ยนสีเมื่อโฮเวอร์ */
+  .ant-carousel .slick-prev:hover, .ant-carousel .slick-next:hover {
+    background-color: #7F6BCC; /* สีของปุ่มเมื่อ hover */
+    color: white; /* สีของลูกศรเมื่อ hover */
+  }
+  
+  /* ปรับขนาดของลูกศร */
+  .ant-carousel .slick-prev:before, .ant-carousel .slick-next:before {
+    font-size: 24px; /* ขนาดของลูกศร */
+  }
+  
+  
+  

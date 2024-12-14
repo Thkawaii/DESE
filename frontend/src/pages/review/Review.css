@@ -1,0 +1,761 @@
+/* Global Styling */
+.ss {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #cfe8f8, #d5c6f8);
+  color: #4a4a4a;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+
+/* Review Container */
+.review-container {
+  width: 90%; /* Adaptive width for larger screens */
+  max-width: 1200px; /* Maximum width to prevent stretching on large screens */
+  height: 90vh; /* Full height minus padding */
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto; /* Enable vertical scrolling for overflow content */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  margin: auto; /* Center the container */
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+/* Custom Scrollbar for Webkit Browsers (Chrome, Edge, Safari) */
+.review-container::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.review-container::-webkit-scrollbar-thumb {
+  background: #6a63ff; /* Scrollbar thumb color */
+  border-radius: 8px; /* Rounded edges for the thumb */
+}
+
+.review-container::-webkit-scrollbar-thumb:hover {
+  background: #5843d8; /* Darker color on hover */
+}
+
+.review-container::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track background color */
+  border-radius: 8px; /* Match thumb radius */
+}
+
+/* Firefox Scrollbar Styles */
+.review-container {
+  scrollbar-width: thin; /* Thinner scrollbar */
+  scrollbar-color: #6a63ff #f0f0f0; /* Thumb and track colors */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .review-container {
+    width: 90%; /* Expand width for smaller screens */
+    height: 85vh; /* Slightly smaller height for compact devices */
+    padding: 20px; /* Reduce padding for smaller screens */
+    border-radius: 20px; /* Adjust rounded corners */
+  }
+}
+
+
+/* Header */
+.review-header {
+  text-align: center;
+}
+
+.review-header h1 {
+  font-size: clamp(3rem, 7vw, 7rem); /* Scales with screen width */
+  color: #8f7ceb;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+/* Review Content */
+.review-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex: 1;
+}
+.qwr {
+  display: flex;
+  justify-content: center;
+  gap: 34px; /* Space between each .qw */
+  position: relative;
+}
+
+.qw {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; /* Giving the circle effect */
+  animation: blink 1s infinite, scale-up-down 1.5s infinite;
+  background: linear-gradient(135deg, #8f7ceb, #6a63ff); /* Single tone gradient from light to dark purple */
+  box-shadow: 0 0 0 4px #fff; /* Black and white border effect */
+}
+
+
+/* Blink and scale-up-down animation */
+@keyframes blink {
+  0%, 100% {
+    opacity: 0.5; /* Dimmed state */
+  }
+  50% {
+    opacity: 1; /* Fully visible state */
+  }
+}
+
+@keyframes scale-up-down {
+  0%, 100% {
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    transform: scale(1.5); /* Enlarged size for animation */
+  }
+}
+
+
+.rating-section{
+  flex: 1;
+  border-radius: 20px;
+  background: url('https://i.pinimg.com/control2/736x/a8/0b/d8/a80bd8a12a1e3b6e282f78f65fd63edb.jpg') no-repeat center center;
+  background-size: cover; /* Ensures the image covers the entire background */
+  padding: 20px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  border: 4px solid #ffffff;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+/* Rating Section */
+.rating-section h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #6a63ff;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+.review-text {
+  width: 100%;
+  height: 100px;
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 1rem;
+  border: 2px solid #d4d4f1;
+  background: #ffffff;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
+  resize: none;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: space-around; /* Ensures even spacing */
+  gap: 15px; /* Space between buttons */
+  margin-top: 20px;
+}
+
+/* Shared Button Styles */
+.primary-btn,
+.secondary-btn,
+.review-later-btn {
+  flex: 1;
+  padding: 15px 20px; /* Consistent padding for all buttons */
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.3s ease; /* Smooth hover effects */
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Primary Button */
+.primary-btn {
+  background: linear-gradient(135deg, #6a63ff, #8e82ff);
+  color: #ffffff;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.primary-btn:hover {
+  background: linear-gradient(135deg, #5843d8, #7c74e8);
+  transform: scale(1.1);
+}
+
+/* Secondary Button */
+.secondary-btn {
+  background: #ffffff;
+  border: 2px solid #6a63ff;
+  color: #6a63ff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.secondary-btn:hover {
+  background: #f3f3ff;
+  transform: scale(1.05);
+}
+
+/* Review Later Button */
+.review-later-btn {
+  background: #ffffff; /* Matches secondary button */
+  border: 2px solid #8f7ceb; /* Slightly different border color */
+  color: #8f7ceb;
+}
+
+.review-later-btn:hover {
+  background: #f3f3ff; /* Matches hover state of secondary button */
+  transform: scale(1.05); /* Slight scale effect */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .review-container {
+    width: 95%;
+    height: auto;
+    padding: 20px;
+  }
+
+  .review-content {
+    flex-direction: column;
+  }
+
+  .rating-section,
+  .feedback-section {
+    width: 100%;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+/* Card Styling */
+.review-card-driver-card{
+    background: linear-gradient(145deg, #f9faff, #ffffff);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .driver-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+  
+ /* Driver Image Frame */
+.driver-image-frame {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #a7b1ff, #f7f5ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .driver-image-frame:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    background: linear-gradient(135deg, #6b58d9, #a7b1ff); /* Changes gradient */
+    animation: blink 1s infinite; /* Adds a glowing animation */
+  }
+  
+  /* Driver Image */
+  .driver-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .driver-image:hover {
+    transform: scale(1.05); /* Slight zoom for the image */
+    box-shadow: 0 10px 20px rgba(106, 99, 255, 0.4); /* Glow effect */
+  }
+  
+  /* Blink Animation */
+  @keyframes blink {
+    0% {
+      box-shadow: 0 0 10px rgba(106, 99, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(106, 99, 255, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(106, 99, 255, 0.5);
+    }
+  }
+/* Reaction Buttons Container */
+.rating-buttons {
+    display: flex;
+    gap: 25px; /* More space for a balanced layout */
+    justify-content: center;
+    margin-top: 30px; /* Increased spacing above */
+  }
+  
+  /* Individual Reaction Button */
+  .reaction-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /* Space between icon and text */
+    padding: 16px 28px; /* Larger padding for a premium feel */
+    border-radius: 30px; /* More rounded corners for a sleek look */
+    background: linear-gradient(135deg, #f8fbff, #e6f0ff); /* Softer and brighter gradient */
+    color: #5678ff; /* Gentle blue shade for text */
+    font-size: 1.3rem; /* Larger text for emphasis */
+    font-weight: bold; /* Bold text for prominence */
+    border: none; /* Clean borderless design */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15); /* Gentle depth shadow */
+    cursor: pointer;
+    position: relative; /* For ripple effect */
+    transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+    overflow: hidden; /* Prevent overflow of effects */
+    font-family: 'Comic Sans MS', sans-serif;
+  }
+  
+  /* Hover Effect */
+  .reaction-button:hover {
+    background: linear-gradient(135deg, #dbe9ff, #b3d0ff); /* Highlighted hover gradient */
+    color: #ffffff; /* White text for contrast */
+    box-shadow: 0 12px 28px rgba(86, 120, 255, 0.5); /* Vibrant shadow glow */
+    transform: translateY(-6px) scale(1.12); /* Lift and enlarge effect */
+  }
+  
+  /* Active/Selected State */
+  .reaction-button.active {
+    background: linear-gradient(135deg, #5843d8, #7c74e8); /* Bold gradient for active state */
+    color: #ffffff;
+    box-shadow: 0 10px 30px rgba(74, 99, 255, 0.7); /* Enhanced glow for active button */
+    transform: scale(1.08); /* Slight zoom */
+  }
+  
+  /* Ripple Effect on Click */
+  .reaction-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.6); /* Softer ripple color */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+  }
+  
+  .reaction-button:active::after {
+    width: 300%;
+    height: 300%;
+    opacity: 0.6;
+  }
+  
+  /* Reaction Icon Styling */
+  .reaction-icon {
+    width: 36px; /* Increased size for better focus */
+    height: 36px;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15)); /* Smooth shadow for icons */
+  }
+  
+  /* Icon Hover Effect */
+  .reaction-button:hover .reaction-icon {
+    transform: scale(1.4); /* Bolder zoom on hover */
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25)); /* Brighter shadow on hover */
+  }
+  
+  /* Text Styling for Reaction Buttons */
+  .reaction-button span {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: capitalize;
+  }
+  
+  
+  /* Comment Box */
+  .comment-box {
+    width: 100%;
+    height: 100px;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid rgba(106, 99, 255, 0.6);
+    background: #ffffff;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    resize: none;
+  }
+  
+  .comment-box:focus {
+    border-color: #6a63ff;
+    box-shadow: 0 0 10px rgba(106, 99, 255, 0.5);
+    outline: none;
+  }
+  
+/* Responsive Design */
+  @media (max-width: 768px) {
+    .review-container {
+      width: 95%;
+      height: auto;
+      padding: 20px;
+    }
+  
+    .rating-buttons {
+      flex-wrap: wrap;
+    }
+  
+    .reaction-button {
+      flex: 1 1 30%;
+      justify-content: center;
+    }
+  }
+  /* Feedback Card Styling */
+.feedback-card {
+    background: url('https://i.pinimg.com/736x/67/b3/89/67b389d3003c71628e4e20dd4d44ac71.jpg') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the entire background */
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 4px solid #ffffff;
+  }
+  
+  .feedback-card h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 15px;
+  }
+  
+  /* Feedback Options */
+  .feedback-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  
+/* Feedback Button */
+.feedback-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #edf2fc, #ffffff);
+    border: 2px solid #d4d4f1;
+    color: #6a63ff;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: 'Comic Sans MS', sans-serif;
+  }
+  
+  .feedback-button:hover {
+    background: #d8e1ff;
+    color: #ffffff;
+    box-shadow: 0 8px 15px rgba(106, 99, 255, 0.3);
+    transform: scale(1.1);
+  }
+  
+  .feedback-button.active {
+    background: linear-gradient(135deg, #5843d8, #7c74e8); 
+    color: #ffffff;
+    border-color: #6a63ff;
+    transform: scale(1.05);
+  }
+  
+  /* Feedback Icon */
+  .feedback-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+  
+  .feedback-button:hover .feedback-icon {
+    transform: scale(1.3) rotate(10deg); /* Adds a slight rotation for flair */
+    color: #ffffff; /* Change icon color on hover */
+  }
+  
+  /* Contact Info */
+  .contact-info p {
+    margin: 5px 0;
+  }
+  
+  .contact-info a {
+    color: #6a63ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-info a:hover {
+    color: #4e3b8d;
+  }
+  
+  
+ /* Passenger Card Styling */
+.passenger-card {
+    background: url('https://i.pinimg.com/control2/736x/a8/0b/d8/a80bd8a12a1e3b6e282f78f65fd63edb.jpg') no-repeat center center;
+    background-size: cover; /* Ensures the image covers the entire background */
+    border-radius: 20px;
+    padding: 18px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: 4px solid #ffffff;
+  }
+  
+  /* Passenger Image Frame */
+  .passenger-image-frame {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #a7b1ff, #f7f5ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .passenger-image-frame:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    background: linear-gradient(135deg, #6b58d9, #d9b3ff); /* Changes gradient */
+    animation: blink 1s infinite; /* Adds a glowing animation */
+  }
+  
+  /* Passenger Image */
+  .passenger-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid white;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .passenger-image:hover {
+    transform: scale(1.05); /* Slight zoom for the image */
+    box-shadow: 0 10px 20px rgba(106, 99, 255, 0.4); /* Glow effect */
+  }
+  
+  /* Blink Animation */
+  @keyframes blink {
+    0% {
+      box-shadow: 0 0 10px rgba(106, 99, 255, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(106, 99, 255, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(106, 99, 255, 0.5);
+    }
+  }
+  
+  /* Passenger Details */
+  .passenger-details {
+    text-align: center;
+  }
+  
+  .passenger-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #000000;
+  }
+  
+  .passenger-id {
+    color: #6a63ff;
+    font-weight: bold;
+    margin: 10px 0;
+    text-shadow: 1px 1px 4px rgba(106, 99, 255, 0.3);
+    padding: 5px;
+    background: linear-gradient(135deg, #f9f9ff, #d8e1ff);
+    border-radius: 8px;
+    display: inline-block;
+  }  
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .feedback-card, .passenger-card {
+      padding: 15px;
+    }
+  
+    .feedback-button {
+      font-size: 0.9rem;
+      padding: 8px 15px;
+    }
+  
+    .passenger-image {
+      width: 70px;
+      height: 70px;
+    }
+  }
+/* Contact Info Container */
+.contact-info-container {
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #f9faff);
+    border: 2px solid #6a63ff; /* Purple border */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: left;
+    font-size: 0.9rem;
+    color: #4a4a4a;
+  }
+  
+  
+  /* Individual Contact Info Items */
+  .contact-info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  /* Icons for Contact Info */
+  .contact-icon {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d8e1ff, #ffffff);
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .contact-icon:hover {
+    transform: scale(1.2); /* Enlarge icon on hover */
+  }
+  
+  /* Links in Contact Info */
+  .contact-info-container a {
+    color: #6a63ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-info-container a:hover {
+    color: #4e3b8d;
+  }
+/* Contact Message Styling */
+.contact-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+    padding: 20px; /* เพิ่มพื้นที่ภายใน */
+    margin: 20px auto; /* จัดให้อยู่กลางหน้าแบบแนวนอน */
+    width: 80%; /* กำหนดความกว้างแบบยืดหยุ่น */
+    max-width: 600px; /* ความกว้างสูงสุด */
+    border: 3px solid #f5bcbc; /* เส้นขอบสีแดงอ่อน */
+    border-radius: 15px; /* มุมโค้งมน */
+    background: linear-gradient(135deg, #fdecec, #ffffff); /* ไล่โทนสีแดงอ่อน */
+    box-shadow: 0 8px 20px rgba(255, 153, 153, 0.2); /* เงาที่นุ่มนวล */
+    font-size: 0.8rem; /* ขนาดตัวอักษรที่อ่านง่าย */
+    color: #000000; /* สีข้อความโทนแดงเข้ม */
+  }
+  
+  /* Hover Effect */
+  .contact-message:hover {
+    background: linear-gradient(135deg, #fdecec, #f5bcbc); /* เพิ่มความเข้มไล่โทน */
+    border-color: #f28b8b; /* สีขอบเมื่อ hover */
+    box-shadow: 0 10px 25px rgba(255, 102, 102, 0.4); /* เงาเมื่อ hover */
+    transform: scale(1.02); /* ขยายเล็กน้อย */
+    transition: all 0.3s ease; /* เพิ่มความลื่นไหล */
+  }
+  
+/* Rating Stars Container */
+.rating-stars {
+    display: flex;
+    gap: 10px; /* Space between stars */
+    justify-content: center;
+    padding: 15px; /* Padding inside the container */  
+    width: fit-content; /* Fit container to content */
+    align-self: center; /* Center the container */
+  }
+  
+  /* Default Star Styling */
+  .star {
+    font-size: 2.5rem; /* Size of the star */
+    color: #ffffff; /* Light pastel yellow */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease; /* Smooth hover and click effects */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Soft glow for depth */
+  }
+  
+  /* Hover Effect */
+  .star:hover {
+    color: #ffe97f; /* Bright pastel yellow for hover */
+    transform: scale(1.2); /* Slight zoom effect */
+  }
+  
+  /* Selected Stars */
+  .star.selected {
+    color: #ffd966; /* Deeper pastel yellow for selected stars */
+    text-shadow: 0 4px 8px rgba(255, 217, 102, 0.5); /* Glow effect for selected stars */
+  }
+  
+  /* Ripple Effect on Click */
+  .star:active {
+    animation: starClick 0.3s ease;
+  }
+  
+  /* Ripple Animation */
+  @keyframes starClick {
+    0% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.4);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .rating-label {
+    font-size: 1.8rem; /* Adjust font size */
+    color: #000000; /* Match the yellow theme */
+    margin-bottom: 1px; /* Add some spacing below */
+    text-align: center; /* Center align the text */
+  }
+  .driver-id {
+    font-size: 1.2rem; /* ขนาดตัวอักษร */
+    color: #6a63ff; /* สีตัวอักษร */
+    font-weight: bold; /* ตัวหนา */
+    margin: 10px 0; /* ระยะห่างด้านบนและล่าง */
+    text-shadow: 1px 1px 4px rgba(106, 99, 255, 0.3); /* เงาเบาๆ */
+    padding: 5px; /* ระยะขอบด้านใน */
+    background: linear-gradient(135deg, #f9f9ff, #d8e1ff); /* พื้นหลังแบบไล่เฉด */
+    border-radius: 8px; /* มุมโค้ง */
+    display: inline-block; /* เพื่อให้มีขนาดตามเนื้อหา */
+}
+

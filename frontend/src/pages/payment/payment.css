@@ -1,0 +1,505 @@
+/* Global Styling */
+.nn {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #cfe8f8, #d5c6f8);
+    color: #4a4a4a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+/* Full-Screen Scrollable Payment Container */
+.payment-container1 {
+    height: 100vh; /* Full height of the viewport */
+    overflow-y: auto; /* Enable vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    padding: 20px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Include padding in width/height */
+    font-family: 'Comic Sans MS', sans-serif;
+  }
+  
+  /* Custom Scrollbar for Webkit Browsers (Chrome, Edge, Safari) */
+  .payment-container1::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  .payment-container1::-webkit-scrollbar-thumb {
+    background: #6a63ff; /* Scrollbar thumb color */
+    border-radius: 8px; /* Rounded edges */
+  }
+  
+  .payment-container1::-webkit-scrollbar-thumb:hover {
+    background: #5843d8; /* Darker color on hover */
+  }
+  
+  .payment-container1::-webkit-scrollbar-track {
+    background: #f0f0f0; /* Background of the scrollbar track */
+    border-radius: 8px; /* Match thumb radius */
+  }
+  
+  /* Firefox Scrollbar Styles */
+  .payment-container1 {
+    scrollbar-width: thin; /* Make the scrollbar thinner */
+    scrollbar-color: #6a63ff #f0f0f0; /* Thumb and track colors */
+  }
+  
+/* Payment Container */
+.payment-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #ffffff, #f9f9ff);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+/* Header Styling */
+.payment-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.payment-header h1 {
+    font-size: clamp(4rem, 8vw, 8rem); /* Scales with screen width */
+    color: #8f7ceb;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Comic Sans MS', sans-serif;
+}
+/* Step Indicators Wrapper */
+.step-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between steps */
+    margin-top: 20px;
+    align-items: center;
+    animation: move-indicators 3s infinite ease-in-out; /* Continuous movement */
+  }
+  
+ /* Shared Styles for All Steps */
+ .payment-container1 .step {
+    width: 30px;
+    height: 30px;
+    border: 5px solid #8f7ceb; /* Unified border color */
+    border-radius: 50%; /* Makes them circular */
+    background-color: transparent; /* Default transparent background */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: all 0.3s ease; /* Smooth transition for interactions */
+    animation: blink 1.5s infinite ease-in-out; /* Shared blinking animation */
+    font-family: 'Comic Sans MS', sans-serif;
+  }
+  
+  /* Animation for Blinking Effect */
+  @keyframes blink {
+    0%, 100% {
+      background-color: transparent; /* Default background */
+      transform: scale(1); /* Default size */
+    }
+    50% {
+      background-color: #8f7ceb; /* Same color for all steps */
+      transform: scale(1.2); /* Slight size increase during animation */
+    }
+  }
+  
+  /* Sequential Animation Delays for Each Step */
+  .step:nth-child(1) {
+    animation-delay: 0s;
+  }
+  
+  .step:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  
+  .step:nth-child(3) {
+    animation-delay: 1s;
+  }
+  
+  /* Optional Hover Effect for All Steps */
+  .step:hover {
+    transform: scale(1.3); /* Slightly larger size on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  
+/* Payment Options */
+.payment-options {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 0 10px; /* Add horizontal padding for spacing */
+}
+
+/* Payment Option */
+.payment-option {
+  flex: 1;
+  text-align: center;
+  padding: 20px 15px;
+  background: linear-gradient(135deg, #eaf0ff, #f8fbff); /* Subtle gradient */
+  border-radius: 20px; /* More rounded corners for a modern look */
+  border: 2px solid #d0d5f5;
+  color: #4a4a4a;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s ease; /* Longer transition for smoother effect */
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  position: relative; /* For hover effects */
+  overflow: hidden; /* For animated background */
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+/* Hover Effect */
+.payment-option:hover {
+  background: linear-gradient(135deg, #d8e1ff, #eef3ff); /* Enhanced gradient on hover */
+  border-color: #6a63ff;
+  transform: translateY(-5px) scale(1.02); /* Slight scale effect */
+  box-shadow: 0px 8px 15px rgba(106, 99, 255, 0.2); /* Stronger shadow on hover */
+}
+
+/* Selected State */
+.payment-option.selected {
+  background: linear-gradient(135deg, #6a63ff, #8e82ff); /* Vibrant gradient */
+  color: #ffffff; /* White text */
+  transform: scale(1.1); /* Larger scale */
+  box-shadow: 0px 10px 20px rgba(106, 99, 255, 0.3); /* Glowing shadow */
+  border-color: #ffffff;
+}
+
+/* Animated Background Overlay */
+.payment-option::before {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3); /* Light overlay */
+  transition: all 0.4s ease;
+  z-index: 0;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+.payment-option:hover::before {
+  top: 0; /* Slide the overlay into view */
+}
+
+.payment-option.selected::before {
+  background: rgba(255, 255, 255, 0.1); /* Subtle overlay for selected */
+  top: 0; /* Keep overlay in place */
+}
+
+/* Text Styling */
+.payment-option p {
+  z-index: 1; /* Ensure text appears above the overlay */
+  position: relative;
+}
+
+/* Wallet and Card Sections */
+.card-details-form,
+.wallet-options {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Wallet Section */
+.wallet-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    justify-items: center;
+    margin-top: 10px;
+}
+
+.wallet-btn {
+    background: #ffffff;
+    border: 2px solid #d4d4f1;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 140px;
+}
+
+.wallet-btn img {
+    width: 75px;
+    height: 75px;
+    margin-bottom: 0px;
+}
+
+.wallet-btn span {
+    display: block;
+    font-weight: bold;
+    color: #4a4a4a;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.wallet-btn:hover {
+    background: #f0f5ff;
+    transform: scale(1.05);
+    border-color: #6a63ff;
+}
+
+/* Form Styling */
+.card-details-form .form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.card-details-form label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #6a63ff;
+    margin-bottom: 8px;
+}
+
+.card-details-form input,
+.card-details-form select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #d0d5f5;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f9f9ff;
+    transition: all 0.3s ease;
+}
+.card-details-form input {
+    width: 94.5%;
+    padding: 12px;
+    border: 2px solid #d0d5f5;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #f9f9ff;
+    transition: all 0.3s ease;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.card-details-form input:focus,
+.card-details-form select:focus {
+    border-color: #6a63ff;
+    outline: none;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.primary-btn {
+    flex: 1;
+    margin-right: 10px;
+    background: linear-gradient(135deg, #6a63ff, #8e82ff);
+    color: #ffffff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.primary-btn:hover {
+    background: linear-gradient(135deg, #5843d8, #7c74e8);
+    transform: scale(1.05);
+    font-family: 'Poppins', sans-serif;
+}
+
+.secondary-btn {
+    flex: 1;
+    margin-left: 10px;
+    background: #ffffff;
+    border: 3px solid #6a63ff;
+    color: #6a63ff;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.secondary-btn:hover {
+    background: #f3f3ff;
+    transform: scale(1.05);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .payment-options {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .wallet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+.error-message {
+    color: #ff4d4d; /* Bright red for visibility */
+    font-size: 14px;
+    margin-top: 5px;
+    padding: 10px 20px; /* Add more padding for spacing */
+    padding-left: 31px; /* Specifically adjust left padding to move text */
+    background: rgba(255, 77, 77, 0.1); /* Light red background */
+    border: 1px solid #ff4d4d; /* Matching border */
+    border-radius: 6px; /* Rounded corners for a polished look */
+    box-shadow: 0 4px 6px rgba(255, 77, 77, 0.2); /* Subtle shadow */
+    font-weight: bold; /* Highlighted text */
+    position: relative;
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    text-align: left; /* Align text properly */
+}
+  
+  /* Hover effect for error messages */
+  .error-message:hover {
+    background: rgba(255, 77, 77, 0.2); /* Darker red background on hover */
+    box-shadow: 0 6px 12px rgba(255, 77, 77, 0.4); /* Enhanced shadow on hover */
+    transform: scale(1.05); /* Slight enlargement for emphasis */
+  }
+
+/* Optional exclamation icon for added flair */
+.error-message::before {
+    content: "⚠️ "; /* Add an icon or symbol */
+    position: absolute;
+    left: 10px; /* Adjust the spacing from the left */
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    margin-right: 5px; /* Space between icon and text */
+}
+/* QR Code Image Styling */
+.qr-code-img {
+    width: 300px; /* Set a specific width */
+    height: 300px; /* Set a specific height to maintain a square aspect ratio */
+    object-fit: contain; /* Ensure the image fits within the specified dimensions */
+    border: 4px solid #6a63ff; /* Add a border with a highlight color */
+    border-radius: 16px; /* Rounded corners for a polished look */
+    background-color: #f9faff; /* Background color to ensure visibility */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 20px auto; /* Center the image within the container */
+    display: block; /* Ensures the image is treated as a block element */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add hover effects */
+  }
+  
+  /* Hover Effect for QR Code */
+  .qr-code-img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 20px rgba(106, 99, 255, 0.3); /* Enhanced shadow on hover */
+  }
+  h2 {
+    text-align: center; /* เผื่อมีเนื้อหาหลายบรรทัด */
+  }  
+  /* Sidebar */
+.sidebar {
+    width: 120px;
+    background: linear-gradient(135deg, #a7b1ff, #d5d9ff);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1);
+    border-right: 4px solid #8f7ceb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+  }
+  
+  .menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 10px;
+  }
+  
+  .menu-item:hover {
+    transform: scale(1.15);
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .menu-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .menu-icon:hover {
+    transform: rotate(360deg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .menu-text {
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+/* Main Content */
+.main-content {
+    margin-left: 140px; /* Adjust to account for the sidebar */
+    padding: 2rem;
+  } 
+  .payment-option-img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .payment-option:hover .payment-option-img {
+    transform: scale(1.1);
+  }
+  .image-row {
+    display: flex;
+    justify-content: center; /* Center the images horizontally */
+    align-items: center; /* Vertically align the images */
+    gap: 1.5rem; /* Add spacing between images */
+    margin-top: 2rem; /* Add spacing above the row */
+  }
+  
+  .image-item {
+    width: 80px; /* Set consistent size */
+    height: 80px; /* Set consistent size */
+    object-fit: contain; /* Ensure the images maintain their aspect ratio */
+    border-radius: 10px; /* Slightly round the edges */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  

@@ -1,0 +1,62 @@
+/* สำหรับ container ของรายการสถานที่ */
+.list-place {
+    position: absolute;
+    bottom: 70px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 1001;
+    top: 120%;
+  }
+  
+  /* สำหรับรายการของสถานที่ */
+  .place-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    max-height: 200px;
+  }
+  
+  /* สำหรับแต่ละรายการสถานที่ */
+  .place-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+  }
+  
+  /* เพิ่มสไตล์เมื่อไม่มีสถานที่ใกล้เคียง */
+  .place-item.no-places {
+    text-align: center;
+    color: #888;
+  }
+  
+
+  /* MapComponent.css */
+
+/* สไตล์ของกล่องปุ่ม */
+.pickup-button-container {
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    position: fixed; /* ใช้ fixed เพื่อให้ปุ่มอยู่คงที่ที่ด้านล่าง */
+    bottom: 10px; /* ตั้งค่าให้ปุ่มอยู่ห่างจากด้านล่าง */
+    left: 0;
+    z-index: 9999; /* ปรับ z-index ให้สูงขึ้น */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); /* เพิ่มเงาให้ปุ่ม */
+}
+
+/* ปุ่มเลือกจุดรับ */
+.pickup-button {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.pickup-button:hover {
+    background-color: #45a049; /* สีเมื่อ hover */
+}

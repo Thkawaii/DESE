@@ -1,0 +1,327 @@
+/* Global Styling */
+.ee {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #d1e7ff, #f8d7ff);
+    color: #4a4a4a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+ 
+/* Review History Container */
+.review-history-container {
+  width: 90vw; /* Adaptive width */
+  max-width: 1200px; /* Maximum width for larger screens */
+  text-align: center;
+  overflow-y: auto; /* Enable vertical scrolling for overflow content */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  margin: 20px auto; /* Center container */
+  display: flex;
+  flex-direction: column; /* Arrange content vertically */
+  gap: 20px; /* Space between sections */
+  box-sizing: border-box; /* Include padding in width/height */
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+/* Scrollbar Customization */
+.review-history-container::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.review-history-container::-webkit-scrollbar-thumb {
+  background: #6a63ff; /* Scrollbar thumb color */
+  border-radius: 8px; /* Rounded edges */
+}
+
+.review-history-container::-webkit-scrollbar-thumb:hover {
+  background: #5843d8; /* Darker thumb color on hover */
+}
+
+.review-history-container::-webkit-scrollbar-track {
+  background: #f0f0f0; /* Track background color */
+  border-radius: 8px; /* Match thumb radius */
+}
+
+/* Firefox Scrollbar Styles */
+.review-history-container {
+  scrollbar-width: thin; /* Make the scrollbar thinner */
+  scrollbar-color: #6a63ff #f0f0f0; /* Thumb and track colors */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .review-history-container {
+    width: 95vw; /* Increase width for smaller screens */
+    padding: 20px; /* Reduce padding */
+    border-radius: 15px; /* Adjust border radius */
+  }
+}
+
+  
+  /* Header */
+  .review-header {
+    margin-bottom: 20px;
+  }
+  
+  .review-header h1 {
+    font-size: clamp(3rem, 7vw, 7rem); /* Scales with screen width */
+    color: #8f7ceb;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+  /* Review History */
+  .review-history-content {
+    margin-top: 20px;
+  }
+  
+  .review-history-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #c3d8ff, #e4cbff);
+    border-radius: 12px;
+    padding: 10px 20px;
+    display: inline-block;
+    font-family: 'Comic Sans MS', sans-serif;
+  }
+  
+  /* Table Styling */
+  .review-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+  
+  .review-table th,
+  .review-table td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .review-table th {
+    background: linear-gradient(135deg, #e3f2ff, #f3e9ff);
+    color: #6a63ff;
+    font-weight: 700;
+  }
+  
+  .review-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .review-table tr:hover {
+    background-color: #f1f5ff;
+    transform: scale(1.01);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Features Badge */
+  .feature-badge {
+    display: inline-block;
+    margin: 2px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    color: #ffffff;
+    background: linear-gradient(135deg, #6a63ff, #8e82ff);
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(106, 99, 255, 0.4);
+    font-family: 'Comic Sans MS', sans-serif;
+  }
+  
+/* Button Container */
+.button-container {
+    margin-top: 20px;
+  }
+  
+  /* Back Button Styling */
+  .secondary-btn.back-btn {
+    background: linear-gradient(135deg, #6a63ff, #8e82ff); /* Match primary button gradient */
+    color: #ffffff; /* White text */
+    border: none; /* No border */
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 12px rgba(106, 99, 255, 0.3); /* Slight purple shadow */
+    font-family: 'Comic Sans MS', sans-serif;
+  }
+  
+  .secondary-btn.back-btn:hover {
+    background: linear-gradient(135deg, #5843d8, #7c74e8); /* Match primary button hover gradient */
+    transform: scale(1.1); /* Slight scale effect */
+    box-shadow: 0 6px 15px rgba(106, 99, 255, 0.5); /* Enhanced shadow */
+  }
+  
+  
+  /* Edit and Delete Buttons */
+  .edit-btn,
+  .delete-btn {
+    padding: 15px;
+    width: 120px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Slightly increased font size for readability */
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(106, 99, 255, 0.3);
+    font-family: 'Comic Sans MS', sans-serif;
+  }
+  .tyu {
+    display: flex;
+    justify-content: center;
+    gap: 34px; /* Space between each .qw */
+    position: relative;
+  }
+  
+  .yh {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; /* Giving the circle effect */
+    animation: blink 1s infinite, scale-up-down 1.5s infinite;
+    background: linear-gradient(135deg, #8f7ceb, #6a63ff); /* Single tone gradient from light to dark purple */
+    box-shadow: 0 0 0 4px #fff; /* Black and white border effect */
+  }
+  
+  
+  /* Blink and scale-up-down animation */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 0.5; /* Dimmed state */
+    }
+    50% {
+      opacity: 1; /* Fully visible state */
+    }
+  }
+  
+  @keyframes scale-up-down {
+    0%, 100% {
+      transform: scale(1); /* Normal size */
+    }
+    50% {
+      transform: scale(1.5); /* Enlarged size for animation */
+    }
+  }
+   
+  /* Edit Button */
+  .edit-btn {
+    background: linear-gradient(135deg, #6a63ff, #8e82ff); /* Match primary button gradient */
+    color: white;
+  }
+  
+  .edit-btn:hover {
+    background: linear-gradient(135deg, #5843d8, #7c74e8); /* Match primary button hover gradient */
+    box-shadow: 0 6px 10px rgba(106, 99, 255, 0.4); /* Enhanced shadow */
+    transform: translateY(-2px); /* Lift effect */
+  }
+  
+  .edit-btn:active {
+    background: #5843d8; /* Solid purple for pressed state */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Compressed shadow */
+    transform: translateY(1px); /* Lower on press */
+  }
+  
+  /* Delete Button */
+  .delete-btn {
+    background: linear-gradient(135deg, #6a63ff, #8e82ff); /* Match primary button gradient */
+    color: white;
+  }
+  
+  .delete-btn:hover {
+    background: linear-gradient(135deg, #5843d8, #7c74e8); /* Match primary button hover gradient */
+    box-shadow: 0 6px 10px rgba(106, 99, 255, 0.4); /* Enhanced shadow */
+    transform: translateY(-2px); /* Lift effect */
+  }
+  
+  .delete-btn:active {
+    background: #5843d8; /* Solid purple for pressed state */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Compressed shadow */
+    transform: translateY(1px); /* Lower on press */
+  }
+  /* Modal Container */
+.edit-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Ensure modal is above other elements */
+  }
+  
+  /* Modal Content Box */
+  .edit-modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* Modal Header */
+  .edit-modal-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Input Fields */
+  .edit-modal-content input[type="text"],
+  .edit-modal-content input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  /* Modal Actions */
+  .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .save-btn,
+  .cancel-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Save Button */
+  .save-btn {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .save-btn:hover {
+    background-color: #218838;
+  }
+  
+  /* Cancel Button */
+  .cancel-btn {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #c82333;
+  }
+  

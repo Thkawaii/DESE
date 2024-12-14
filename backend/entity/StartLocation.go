@@ -10,6 +10,6 @@ type StartLocation struct {
     
     Address   string  `json:"address"` // ที่อยู่เพิ่มเติม (ถ้ามี)
    
-	BookingID uint    `json:"booking_id"` // Foreign Key เชื่อมกับ Booking
+	
 	
 }
