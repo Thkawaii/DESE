@@ -1,12 +1,11 @@
-//import { BookingInterface } from "../../room/booking/interfaces/IBooking";
 
 export interface ReviewInterface {
+    reviewId: string;
     ID?: number;
     Rating: number;
     Comment: string;
-    BookingID: number;
-    PassengerID: number;
-    DriverID: number;
-    //Booking?: BookingInterface;
+    BookingID?: number;
+    PassengerID?: number;
+    DriverID?: number;
 }
 

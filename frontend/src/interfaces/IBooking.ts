@@ -1,4 +1,10 @@
+import { ReactNode } from "react";
+
 export interface Booking {
+    Vehicle: ReactNode;
+    Terminus: ReactNode;
+    Beginning: ReactNode;
+    ID: ReactNode;
     BookingID?: number;
     StartLocation?: string;
     Destination?: string;

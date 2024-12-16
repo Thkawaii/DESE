@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./edit.css";
 import { useNavigate } from "react-router-dom";
-
+import { UpdateReview } from "../../../services/https/ReviewAPl"; // Corrected function name and path
+import { ReviewInterface } from "../../../interfaces/lReview";
 interface Review {
   driverId: string;
   passengerId: string;
@@ -14,15 +15,18 @@ interface Review {
 const Edit: React.FC = () => {
   const navigate = useNavigate();
 
+  // Mock review data (can be fetched from API)
+  const initialReview: Review = {
+    driverId: "12345",
+    passengerId: "54321",
+    reviewId: "001",
+    comment: "Great service!",
+    features: "Cleanliness, Timeliness",
+    rating: 5,
+  };
+
   // Form State
-  const [review, setReview] = useState<Review>({
-    driverId: "",
-    passengerId: "",
-    reviewId: "",
-    comment: "",
-    features: "",
-    rating: 0,
-  });
+  const [review, setReview] = useState<Review>(initialReview);
 
   // Error State
   const [errors, setErrors] = useState({
@@ -58,37 +62,49 @@ const Edit: React.FC = () => {
     setErrors((prev) => ({ ...prev, [field]: errorMessage }));
   };
 
-  // Handle Save
-  const handleSave = () => {
-    const validationErrors = {
-      driverId: review.driverId ? "" : "Driver ID is required.",
-      passengerId: review.passengerId ? "" : "Passenger ID is required.",
-      comment: "", // Optional
-      features: "", // Optional
-      rating: review.rating >= 1 && review.rating <= 5 ? "" : "Rating must be between 1 and 5.",
-    };
-
-    setErrors(validationErrors);
-
-    if (Object.values(validationErrors).some((error) => error)) {
-      alert("Please fix the errors before saving.");
-      return;
-    }
-
-    alert("Review saved successfully!");
-    navigate("/review/history");
+ 
+const handleSave = async () => {
+  // Perform validation
+  const validationErrors = {
+    driverId: review.driverId ? "" : "Driver ID is required.",
+    passengerId: review.passengerId ? "" : "Passenger ID is required.",
+    comment: "", // Optional
+    features: "", // Optional
+    rating: review.rating >= 1 && review.rating <= 5 ? "" : "Rating must be between 1 and 5.",
   };
+
+  setErrors(validationErrors);
+
+  if (Object.values(validationErrors).some((error) => error)) {
+    alert("Please fix the errors before saving.");
+    return;
+  }
+
+  try {
+    const response = await UpdateReview(review);
+    if (response) {
+      alert("Review updated successfully!");
+      navigate("/review/history"); // Redirect to review history
+    } else {
+      alert("Failed to update review. Please try again later.");
+    }
+  } catch (error) {
+    console.error("Error updating review:", error);
+    alert("An error occurred while updating the review.");
+  }
+};
 
   // Handle Back
   const handleBack = () => {
-    navigate(-1);
+    navigate("/review/history");
   };
 
   return (
-    <div className="pp">
     <div className="edit-container">
       <div className="edit-card">
-        <h2 className="edit-title">Edit Review</h2>
+        <header className="edit-header">
+          <h1>Edit Review</h1>
+        </header>
         <div className="edit-form">
           <div className="form-row">
             <label>Driver ID</label>
@@ -114,8 +130,7 @@ const Edit: React.FC = () => {
           </div>
           <div className="form-row">
             <label>Comment</label>
-            <input
-              type="text"
+            <textarea
               value={review.comment}
               onChange={(e) => handleChange("comment", e.target.value)}
             />
@@ -144,15 +159,14 @@ const Edit: React.FC = () => {
           </div>
         </div>
         <div className="edit-actions">
-          <button className="back-btn" onClick={handleBack}>
+          <button className="secondary-btn back-btn" onClick={handleBack}>
             Go Back
           </button>
-          <button className="save-btx" onClick={handleSave}>
+          <button className="primary-btn save-btn" onClick={handleSave}>
             Save
           </button>
         </div>
       </div>
-    </div>
     </div>
   );
 };

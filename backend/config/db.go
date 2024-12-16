@@ -48,10 +48,52 @@ func SetupDatabase() {
 		&entity.Position{},
 		&entity.Promotion{},
 		&entity.StatusPromotion{},
-		
+		&entity.Payment{},
+		&entity.Review{},
+		)
+		// เพิ่มข้อมูลตัวอย่าง Booking
+	bookingExamples := []entity.Booking{
+		{
+			Beginning:      "Bangkok",
+			Terminus:       "Phuket",
+			StartTime:      time.Now().Add(48 * time.Hour).Format("2006-01-02 15:04:05"), // แปลงเป็น string
+			EndTime:        time.Now().Add(60 * time.Hour).Format("2006-01-02 15:04:05"), // แปลงเป็น string
+			Distance:       840.0,
+			TotalPrice:     2500.0,
+			BookingTime:    time.Now().Format("2006-01-02 15:04:05"), // แปลงเป็น string
+			BookingStatus:  "Confirmed",
+			Vehicle:        "SUV",
+		},
+	}
 
+	for _, booking := range bookingExamples {
+		db.FirstOrCreate(&booking, &entity.Booking{Beginning: booking.Beginning, Terminus: booking.Terminus})
+	}
+	// Setup Driver data
+    driver := entity.Driver{
+        Name:             "John Doe",
+        DriverLicenseNum: "DL123456",
+        PhoneNumber:      "080-123-4567",
+        Password:         "password123",
+        Profile:          "Driver Profile Picture",
+        Income:           5000.0,
+        BirthDate:        time.Now().AddDate(-30, 0, 0), // 30 years ago
+    }
 
-	)
+    // Create or update Driver
+    db.FirstOrCreate(&driver, entity.Driver{DriverLicenseNum: driver.DriverLicenseNum})
+	// Setup Passenger data
+passenger := entity.Passenger{
+    UserName:    "johndoe123",
+    FirstName:   "John",
+    LastName:    "Doe",
+    PhoneNumber: "080-987-6543",
+    Email:       "johndoe@example.com",
+    Password:    "password123",
+}
+
+// Create or update Passenger using FirstOrCreate
+db.FirstOrCreate(&passenger, entity.Passenger{Email: passenger.Email})
 
 	promotions := []entity.Promotion{
 		{

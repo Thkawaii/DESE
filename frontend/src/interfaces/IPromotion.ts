@@ -1,4 +1,5 @@
 export interface PromotionInterface {
+    StatusPromotionID: number;
     id?: number; // ID ของโปรโมชั่น (Optional)
     promotion_code: string; // รหัสโปรโมชั่น (required ใน backend)
     promotion_name?: string; // ชื่อโปรโมชั่น

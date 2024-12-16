@@ -5,7 +5,8 @@ import TrueMoneyQR from '../../assets/2.png';
 import PromptPayQR from '../../assets/3.png';
 import AlipayQR from '../../assets/4.png';
 import LinePayQR from '../../assets/5.png';
-
+import { CreatePayments } from "../../services/https/PaymentAPI";
+import { Paymentx } from "../../interfaces/IPayment";
 
 
 
@@ -398,10 +399,10 @@ const Payment: React.FC = () => {
       )}
 
       <div className="button-container">
-        <button className="primary-btn" onClick={handleConfirm}>
+        <button className="ax" onClick={handleConfirm}>
           Confirm
         </button>
-        <button className="secondary-btn" onClick={() => navigate(-1)}>
+        <button className="cx" onClick={() => navigate(-1)}>
           Cancel
         </button>
       </div>

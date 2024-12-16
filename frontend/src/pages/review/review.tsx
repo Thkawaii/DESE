@@ -1,7 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Outlet,useNavigate } from 'react-router-dom';
 import './Review.css';
-
+import { CreateReview } from "../../services/https/ReviewAPl";
+import { GetDriver } from "../../services/https/DriverAPI";
+import { GetPassenger } from "../../services/https/PassengerAPI";
+import { Booking } from "../../interfaces/IBooking";
+import { GetBooking } from "../../services/https/BookingAPI";
+import { Driver } from "../../interfaces/IDriver";
+import { Passenger } from "../../interfaces/IPassenger";
+import { ReviewInterface } from '../../interfaces/lReview';
 
   
 const menuItems = [
@@ -19,6 +26,8 @@ const Review: React.FC = () => {
       const [feedbackOptions, setFeedbackOptions] = useState<string[]>([]);
       const [hovered, setHovered] = useState(false);
       const [selectedImage, setSelectedImage] = useState<string>("");
+      const [driver, setDriver] = useState<any>(null);
+      const [passenger, setPassenger] = useState<any>(null);
       const handleMenuClick = (item: { name: string; icon: string; route: string }) => {
         setSelectedImage(item.icon);
         navigate(item.route);
@@ -30,37 +39,70 @@ const Review: React.FC = () => {
             : [...prevOptions, option]
         );
       };  
-    
+       // Fetch driver data
+  const fetchDriver = async () => {
+    try {
+      const driverResponse = await GetDriver();
+      setDriver(driverResponse);
+    } catch (error) {
+      console.error("Error fetching driver:", error);
+    }
+  };
+
+  // Fetch passenger data
+  const fetchPassenger = async () => {
+    try {
+      const passengerResponse = await GetPassenger();
+      setPassenger(passengerResponse);
+    } catch (error) {
+      console.error("Error fetching passenger:", error);
+    }
+  };
+   // Use useEffect to call the functions on component mount
+   useEffect(() => {
+    fetchDriver();
+    fetchPassenger();
+  }, []);
       const handleRatingClick = (value: number) => {
         setRating(value);
       };
-      const handleSubmit = () => {
+      const handleSubmit = async () => {
         if (!rating) {
           alert("Please choose a rating before submitting your review.");
           return;
         }
-      
+    
         if (!reviewText.trim()) {
           alert("Please write a comment before submitting your review.");
           return;
         }
-      
+    
         if (feedbackOptions.length === 0) {
           alert("Please select at least one feedback option.");
           return;
         }
-      
-        console.log({
-          rating,
-          reviewText,
-          feedbackOptions,
-        });
-      
-        alert("Review Submitted!");
-        navigate("/review/history");
+    
+        const newReview: ReviewInterface = {
+          reviewId: '', // Set to an empty string if auto-generated or undefined if necessary
+          Rating: rating, // Assuming `rating` is the user's rating
+          Comment: reviewText.trim(), // Trimmed comment text
+          DriverID: driver?.id, // Using dynamic driver ID
+          PassengerID: passenger?.id, // Using dynamic passenger ID
+        };
+        
+        try {
+          const response = await CreateReview(newReview);
+          if (response?.success) {
+            alert("Review Submitted Successfully!");
+            navigate("/review/history"); // Redirect to review history
+          } else {
+            alert("Failed to submit review. Please try again later.");
+          }
+        } catch (error) {
+          console.error("Error submitting review:", error);
+          alert("An error occurred while submitting the review.");
+        }
       };
-      
-
         const handleCancel = () => {
             console.log("/payment");
           };
@@ -107,7 +149,8 @@ const Review: React.FC = () => {
   />
 </div>
 
-<p className="driver-id">Driver_ID: 09</p>
+<p className="driver-id">Driver_ID: {driver?.id || 'N/A'}</p>
+
 
 </div>
 
@@ -237,7 +280,7 @@ const Review: React.FC = () => {
   </div>
   <div className="passenger-details">
     <p className="passenger-title">Review BY</p>
-    <p className="passenger-id">Passenger_ID: 01</p>
+    <p className="passenger-id">Passenger_ID: {passenger?.id || 'N/A'}</p>
   </div>
 </div>
 
